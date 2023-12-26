@@ -13,14 +13,14 @@ class TodoItemCreateView(generics.CreateAPIView):
 
 
 class TodoItemReadView(generics.RetrieveAPIView):
-    queryset = TodoItem.objects.all()
+    queryset = TodoItem.objects.prefetch_related("tags").all()
     serializer_class = TodoItemSerializer
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
 
 class TodoItemListView(generics.ListAPIView):
-    queryset = TodoItem.objects.all()
+    queryset = TodoItem.objects.prefetch_related("tags").all()
     serializer_class = TodoItemSerializer
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
