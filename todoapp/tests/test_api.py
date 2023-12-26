@@ -29,7 +29,7 @@ class TodoItemAPITestCase(TestCase):
             "description": "A new task",
             "due_date": "2023-12-31",
             "status": "OPEN",
-            "tags": []
+            "tags": [],
         }
 
     def test_get_all_todo_items(self):
