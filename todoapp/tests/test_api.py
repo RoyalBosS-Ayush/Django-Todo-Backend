@@ -59,10 +59,10 @@ class TodoItemAPITestCase(TestCase):
         updated_data = self.valid_todo_item_payload
         updated_data["title"] = updated_title
         response = self.client.put(
-            f'/todos/api/todo/{self.todo_item.id}/update/',
+            f"/todos/api/todo/{self.todo_item.id}/update/",
             data=updated_data,
-            content_type='application/json',
-            **auth_headers
+            content_type="application/json",
+            **auth_headers,
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["title"], updated_title)
