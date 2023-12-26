@@ -27,7 +27,9 @@ class TodoItemAPITestCase(TestCase):
         self.valid_todo_item_payload = {
             "title": "New Todo",
             "description": "A new task",
+            "due_date": "2023-12-31",
             "status": "OPEN",
+            "tags": []
         }
 
     def test_get_all_todo_items(self):
@@ -48,7 +50,7 @@ class TodoItemAPITestCase(TestCase):
         response = self.client.post(
             "/todos/api/todo/create/",
             self.valid_todo_item_payload,
-            format="json",
+            content_type="application/json",
             **auth_headers,
         )
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
