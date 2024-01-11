@@ -80,3 +80,7 @@ python manage.py test todoapp
 ![Postman Preview 3](./preview/postman/3.png)
 ![Postman Preview 4](./preview/postman/4.png)
 ![Postman Preview 5](./preview/postman/5.png)
+
+## Coverage Report
+
+![Coverage Report](./preview/coverage/coverage-report.png)
